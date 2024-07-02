@@ -3,31 +3,127 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255; */
+  --light: 240, 241, 242;
+  --primary: 0, 0, 0;
+  --secondary: 4, 59, 255;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--primary));
+  background-color: rgb(var(--light));
+  /* cursor: none; */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+
+/* SPLASH SECTION START */
+
+.fade-animation {
+  animation-name: fade-in;
+  animation-duration: 100ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  opacity: 0;
+}
+
+.slide-right-animation {
+  animation-name: slide-right;
+  animation-delay: 2s;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* SPLASH SECTION END */
+
+/* HOME SECTION START */
+.clampLargeText {
+  font-size: clamp(48px, -0.875rem + 8.333vw, 128px);
+}
+
+.nav-wrapper:hover>.nav-link:not(:hover) {
+  opacity: 0.5;
+}
+
+.up-animation {
+  animation-name: slide-up, fade-in;
+  animation-duration: 100ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translateY(50%);
+  opacity: 0;
+}
+
+/* HOME SECTION END */
+
+/* ABOUT SECTION START */
+
+.slide-up-animation {
+  animation-name: slide-up, fade-in;
+  animation-timeline: view();
+  animation-range-start: contain 0%;
+  animation-range: contain 10%;
+  /* animation-duration: 1000ms; */
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translateY(50%);
+  opacity: 0;
+}
+
+/* ABOUT SECTION END */
+
+/* PROJECTS SECTION START */
+
+.c1 {
+  clip-path: inset(0 100% 0 0);
+}
+
+.c2 {
+  clip-path: inset(0 0 0 0);
+}
+
+.project-btn {
+  animation-name: slide-left;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translateX(100%);
+}
+
+/* PROJECTS SECTION END */
+
+/* KEYFRAMES */
+
+@keyframes slide-up {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-right {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-left {
+  to {
+    transform: translateX(0);
   }
 }
