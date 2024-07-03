@@ -142,6 +142,131 @@ body::-webkit-scrollbar-track {
 } */
 /* CONTACT SECTION END */
 
+/* LOADER SECTION START */
+
+.ldr-container {
+  --uib-size: 20vw;
+  --uib-color: rgb(var(--light));
+  --uib-speed: 2.5s;
+  --uib-dot-size: calc(var(--uib-size) * 0.18);
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--uib-size);
+  height: var(--uib-size);
+}
+
+.ldr-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.ldr-dot::before {
+  content: '';
+  display: block;
+  height: calc(var(--uib-size) * 0.22);
+  width: calc(var(--uib-size) * 0.22);
+  border-radius: 50%;
+  background-color: var(--uib-color);
+  transition: background-color 0.3s ease;
+}
+
+.ldr-dot:nth-child(1) {
+  animation: leapFrog var(--uib-speed) ease infinite;
+}
+
+.ldr-dot:nth-child(2) {
+  transform: translateX(calc(var(--uib-size) * 0.4));
+  animation: leapFrog var(--uib-speed) ease calc(var(--uib-speed) / -1.5) infinite;
+}
+
+.ldr-dot:nth-child(3) {
+  transform: translateX(calc(var(--uib-size) * 0.8)) rotate(0deg);
+  animation: leapFrog var(--uib-speed) ease calc(var(--uib-speed) / -3) infinite;
+}
+
+@keyframes leapFrog {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+
+  33.333% {
+    transform: translateX(0) rotate(180deg);
+  }
+
+  66.666% {
+    transform: translateX(calc(var(--uib-size) * -0.38)) rotate(180deg);
+  }
+
+  99.999% {
+    transform: translateX(calc(var(--uib-size) * -0.78)) rotate(180deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+/* LOADER SECTION END */
+
+
+/* BnW SECTION START */
+
+.bnw {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+/* BnW SECTION END */
+
+/* ABOUT PAGE START */
+
+
+.cp1 {
+  clip-path: inset(0 0 0 0);
+}
+
+.cp2 {
+  clip-path: inset(0 100% 0 0);
+}
+
+.cp3 {
+  clip-path: inset(0 0 100% 0);
+}
+
+.cp4 {
+  clip-path: inset(0 0 0 100%);
+}
+
+.cp5 {
+  clip-path: inset(100% 0 0 0);
+}
+
+.reverse-marquee-animation {
+  animation-name: marquee;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+
+.marquee-animation-parent:hover {
+  .marquee-animation {
+    animation-play-state: paused;
+  }
+}
+
+
+/* ABOUT PAGE END */
 
 
 /* KEYFRAMES */
@@ -173,5 +298,11 @@ body::-webkit-scrollbar-track {
 @keyframes marquee {
   100% {
     transform: translateX(calc(-100%));
+  }
+}
+
+@keyframes reverse-marquee {
+  100% {
+    transform: translateX(calc(100%));
   }
 }

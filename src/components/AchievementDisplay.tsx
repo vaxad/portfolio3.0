@@ -2,7 +2,7 @@
 
 import { Achievement } from "@/lib/types"
 import { useState } from "react"
-import { LuArrowUpRight, LuArrowRight } from "react-icons/lu"
+import { BsArrowUpRight, BsArrowRight } from "react-icons/bs"
 
 export default function AchievementDisplay({ data }: { data: Achievement[] }) {
     const [hoveredAchievement, setHoveredAchievement] = useState<number | null>(null)
@@ -13,9 +13,9 @@ export default function AchievementDisplay({ data }: { data: Achievement[] }) {
                     <h1 className="slide-up-animation text-4xl font-medium w-full">
                         Achievements
                     </h1>
-                    <p className=" text-xl">
-                        Here are some of the achievements I have gained on over the years.
-                    </p>
+                    <i className=" text-xl">
+                        &quot;Where my hard work paid off big time&quot;
+                    </i>
                 </div>
             </div>
             <div className=" flex flex-col-reverse md:flex-row-reverse ">
@@ -25,14 +25,14 @@ export default function AchievementDisplay({ data }: { data: Achievement[] }) {
                         <div className={`${hoveredAchievement ? " opacity-0" : " opacity-100"} duration-700 flex flex-row-reverse gap-2 py-24 justify-center items-center absolute mx-auto my-auto `}>
                             <h1 className={` text-2xl font-medium hidden md:block`}>Hover over there</h1>
                             <h1 className={` text-2xl font-medium md:hidden block`}>Click over there</h1>
-                            <LuArrowRight className={` -rotate-90 md:rotate-180 w-6 h-6 animate-pulse`} />
+                            <BsArrowRight className={` -rotate-90 md:rotate-180 w-6 h-6 animate-pulse`} />
                         </div>
                         <>
-                            <div className=" flex absolute top-0 right-0 flex-grow w-full overflow-clip h-full">
+                            <div className=" flex absolute top-0 right-0 flex-grow w-full overflow-clip h-full blur-sm">
 
                                 {data.slice(0, 4).map((item, idx) => {
                                     return (
-                                        <img key={`bg-image-${idx}`} className={` ${(hoveredAchievement && idx === hoveredAchievement - 1) ? "opacity-100" : "opacity-0"} bg-black transition-all duration-1000 object-cover blur-sm absolute top-0 right-0 h-full w-full`} src={item.img} />
+                                        <img key={`bg-image-${idx}`} className={` ${(hoveredAchievement && idx === hoveredAchievement - 1) ? "opacity-100" : "opacity-0"} bnw bg-black transition-all duration-1000 object-cover absolute top-0 right-0 h-full w-full`} src={item.img} />
                                     )
                                 })}
                             </div>
@@ -40,7 +40,7 @@ export default function AchievementDisplay({ data }: { data: Achievement[] }) {
                             <div className={`delay-300 p-4 z-10 transition-all relative overflow-clip aspect-video w-full`} >
                                 {data.slice(0, 4).map((item, idx) => {
                                     return (
-                                        <img key={`image-${idx}`} className={` ${(hoveredAchievement && idx === hoveredAchievement - 1) ? "c2 scale-100" : "c1 scale-125"} border bg-black border-white  origin-left transition-all duration-1000 absolute top-0 right-0 w-full h-full`} src={item.img} />
+                                        <img key={`image-${idx}`} className={` ${(hoveredAchievement && idx === hoveredAchievement - 1) ? "c2 scale-100" : "c1 scale-125"} border bnw bg-black border-white  origin-left transition-all duration-1000 absolute top-0 right-0 w-full h-full`} src={item.img} />
                                     )
                                 })}
 
@@ -53,12 +53,12 @@ export default function AchievementDisplay({ data }: { data: Achievement[] }) {
                     {data.slice(0, 3).map((item, idx) => {
                         const delay = idx * 0.1
                         return (
-                            <div key={`project-${item.title}`} onMouseEnter={() => setHoveredAchievement(idx + 1)} style={{ animationDelay: `${delay}s` }} className="project-btn nav-link | w-full group border-b flex border-black py-12 px-4 font-light hover:font-medium hover:bg-black hover:text-primary hover:px-8 transition-all flex-row  justify-between items-center">
+                            <div key={`achievement-${item.title}`} onMouseEnter={() => setHoveredAchievement(idx + 1)} style={{ animationDelay: `${delay}s` }} className="project-btn nav-link | w-full group border-b flex border-black py-12 px-4 font-light hover:font-medium hover:bg-black hover:text-primary hover:px-8 transition-all flex-row  justify-between items-center">
                                 <div className=" flex flex-col justify-center items-center w-fit">
                                     <h1 className=" text-2xl ">{item.title}</h1>
                                     <div className=" h-0.5 w-full bg-primary group-hover:scale-x-100 scale-x-0 origin-left transition-[transform] delay-100 duration-500 "></div>
                                 </div>
-                                <LuArrowUpRight className=" cursor-pointer  w-10 h-10 group-hover:scale-110 delay-300 duration-500 transition-[transform]" />
+                                <BsArrowUpRight className=" cursor-pointer  w-10 h-10 group-hover:scale-110 delay-300 duration-500 transition-[transform]" />
                             </div>
                         )
                     })}

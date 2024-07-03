@@ -2,7 +2,7 @@ export type RepoData = {
     title: string;
     desc: string;
     url: string;
-    img?: string[];
+    img: string[];
     web: string;
     id: string;
 }
@@ -11,7 +11,7 @@ export interface Project {
     title: string;
     desc: string;
     url: string;
-    img: (string | null)[];
+    img: (string)[];
     web: string;
     id: string;
     _id: string;

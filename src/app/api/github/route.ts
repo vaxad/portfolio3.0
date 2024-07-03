@@ -158,7 +158,7 @@ const getserver = async () => {
         const list = $("div#user-list-repositories div")
         const server = []
         for (const el of list as any) {
-            const d: RepoData = { title: "", desc: "", url: "", web: "", id: "" }
+            const d: RepoData = { title: "", desc: "", url: "", web: "", id: "", img: [] }
             const title = $(el).children("div").children("h3").children("a").text().trim()
             const arr2 = title.split(' / ')
             d.title = arr2[1]

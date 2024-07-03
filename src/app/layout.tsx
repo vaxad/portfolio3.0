@@ -3,6 +3,9 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Cursor from "@/components/Cursor";
 import Lenis from "@/components/Lenis";
+import TransitionSlider from "@/components/TransitionSlider";
+import { Provider } from "jotai";
+import TopSection from "@/components/TopSection";
 
 const space = Space_Grotesk({ subsets: ["latin"] });
 
@@ -20,9 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={space.className + " selection:bg-lime-300 overflow-x-clip relative"}>
-        {/* <Cursor /> */}
+        <Cursor />
         <Lenis>
-          {children}
+          <Provider>
+            <TopSection />
+            {children}
+            <TransitionSlider />
+          </Provider>
         </Lenis>
       </body>
     </html>

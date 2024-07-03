@@ -2,7 +2,9 @@
 
 import { Experience } from "@/lib/types"
 import { Dispatch, SetStateAction, useState } from "react"
-import { LuArrowUp, LuTriangle } from "react-icons/lu"
+import { LuTriangle } from "react-icons/lu"
+import { BsArrowUp } from "react-icons/bs"
+
 
 function ExpCard({ item, idx, hovered, setHovered }: {
     item: Experience, idx: number, hovered: number | null, setHovered: Dispatch<SetStateAction<number | null>>
@@ -41,9 +43,9 @@ export default function ExperienceDisplay({ data }: { data: Experience[] }) {
                     <h1 className="slide-up-animation text-4xl font-medium w-full">
                         Experiences
                     </h1>
-                    <p className=" text-xl">
-                        Here are some of the experiences I have gained on over the years.
-                    </p>
+                    <i className=" text-xl">
+                        &quot;My journey through the tech cosmos&quot;
+                    </i>
                 </div>
             </div>
             <div className="flex marquee-animation-parent z-20">
@@ -72,7 +74,7 @@ export default function ExperienceDisplay({ data }: { data: Experience[] }) {
             <div className={`${hoveredExperience ? " opacity-0" : " opacity-100"} duration-700 py-12 flex w-full justify-center items-center `}>
                 <h1 className={` text-2xl font-medium hidden md:block`}>Hover over there</h1>
                 <h1 className={` text-2xl font-medium md:hidden block`}>Click over there</h1>
-                <LuArrowUp className={` w-6 h-6 animate-pulse`} />
+                <BsArrowUp className={` w-6 h-6 animate-pulse`} />
             </div>
         </>
     )

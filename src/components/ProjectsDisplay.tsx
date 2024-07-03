@@ -2,7 +2,9 @@
 
 import { ProjectData } from "@/lib/types"
 import { useState } from "react"
-import { LuArrowUpRight, LuArrowRight } from "react-icons/lu"
+import { BsArrowUpRight, BsArrowRight } from "react-icons/bs"
+import Link from "next/link"
+import SliderTogglerBtn from "./SliderTogglerBtn"
 
 export default function ProjectsDisplay({ data }: { data: ProjectData }) {
     const [hoveredProj, setHoveredProj] = useState<number | null>(null)
@@ -11,13 +13,21 @@ export default function ProjectsDisplay({ data }: { data: ProjectData }) {
     return (
         <>
             <div className=" flex flex-col md:flex-row gap-4 w-full h-fit">
-                <div className=" flex flex-col gap-4 w-full">
-                    <h1 className="slide-up-animation text-4xl font-medium w-full">
-                        Projects
-                    </h1>
-                    <p className=" text-xl">
-                        Here are some of the projects I have worked on over the years.
-                    </p>
+                <div className=" flex flex-col gap-4 w-full group">
+                    <SliderTogglerBtn title="See More" route="/projects">
+                        <div className=" flex flex-col gap-0.5 w-fit cursor-pointer ">
+                            <div className=" flex gap-2 items-center">
+                                <h1 className="slide-up-animation text-4xl font-medium ">
+                                    Projects
+                                </h1>
+                                <BsArrowUpRight className=" w-6 h-6" />
+                            </div>
+                            <div className=" h-0.5 w-full bg-black scale-x-0 group-hover:scale-x-100 transition-[transform] origin-left duration-500 delay-100"></div>
+                        </div>
+                    </SliderTogglerBtn>
+                    <i className=" text-xl">
+                        &quot;Check out my tech wizardry in action&quot;
+                    </i>
                 </div>
                 <div className=" flex flex-row flex-grow w-full justify-center md:justify-end items-start">
                     {Object.keys(data).map((key, idx) => {
@@ -36,14 +46,14 @@ export default function ProjectsDisplay({ data }: { data: ProjectData }) {
                         <div className={`${hoveredProj ? " opacity-0" : " opacity-100"} duration-700 flex flex-row gap-2 py-24 justify-center items-center absolute mx-auto my-auto `}>
                             <h1 className={` text-2xl font-medium hidden md:block`}>Hover over there</h1>
                             <h1 className={` text-2xl font-medium md:hidden block`}>Click over there</h1>
-                            <LuArrowRight className={` -rotate-90 md:rotate-0 w-6 h-6 animate-pulse`} />
+                            <BsArrowRight className={` -rotate-90 md:rotate-0 w-6 h-6 animate-pulse`} />
                         </div>
                         <>
-                            <div className=" flex absolute top-0 right-0 flex-grow w-full overflow-clip h-full">
+                            <div className=" flex absolute top-0 right-0 flex-grow w-full overflow-clip h-full blur-sm">
 
                                 {data[type].slice(0, 4).map((item, idx) => {
                                     return (
-                                        <img key={`bg-image-${idx}`} className={` ${(hoveredProj && idx === hoveredProj - 1) ? "opacity-100" : "opacity-0"} bg-black transition-all duration-1000 object-cover blur-sm absolute top-0 right-0 h-full w-full`} src={type === "server" ? idx % 2 === 0 ? "/images/server1.png" : "/images/server2.png" : (item.img[0] as string)} />
+                                        <img key={`bg-image-${idx}`} className={` ${(hoveredProj && idx === hoveredProj - 1) ? "opacity-100" : "opacity-0"} bnw bg-black transition-all duration-1000 object-cover absolute top-0 right-0 h-full w-full`} src={type === "server" ? idx % 2 === 0 ? "/images/server1.png" : "/images/server2.png" : (item.img[0] as string)} />
                                     )
                                 })}
                             </div>
@@ -70,7 +80,7 @@ export default function ProjectsDisplay({ data }: { data: ProjectData }) {
                                     <div className=" h-0.5 w-full bg-primary group-hover:scale-x-100 scale-x-0 origin-left transition-[transform] delay-100 duration-500 "></div>
                                 </div>
                                 <a href={item.url} target="_blank">
-                                    <LuArrowUpRight className=" cursor-pointer  w-10 h-10 group-hover:scale-110 delay-300 duration-500 transition-[transform]" />
+                                    <BsArrowUpRight className=" cursor-pointer  w-10 h-10 group-hover:scale-110 delay-300 duration-500 transition-[transform]" />
                                 </a>
                             </div>
                         )
