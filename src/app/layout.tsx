@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={space.className + " selection:bg-lime-300 overflow-x-clip"}>
+      <body className={space.className + " selection:bg-lime-300 overflow-x-clip relative"}>
         {/* <Cursor /> */}
         <Lenis>
           {children}

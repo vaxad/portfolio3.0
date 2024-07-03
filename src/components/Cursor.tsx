@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react"
 
 export default function Cursor() {
     const lenis = useLenis()
-    const [mouseX, setMouseX] = useState(200)
-    const [mouseY, setMouseY] = useState(200)
+    const [mouseX, setMouseX] = useState(-200)
+    const [mouseY, setMouseY] = useState(-200)
     const [scrollY, setScrollY] = useState(0)
 
     const mouseXRef = useRef(mouseX)
@@ -43,7 +43,7 @@ export default function Cursor() {
 
     return (
         <>
-            <div className="z-50 hidden lg:block relative w-10 h-10 rounded-full border border-black bg-primary mix-blend-difference transition-[transform] duration-75 delay-0 ease-out" style={{ transform: `translate3d(${mouseX}px, ${mouseY}px, 0)` }}></div>
+            <div className="z-50 hidden lg:block absolute w-10 h-10 rounded-full border border-black bg-primary mix-blend-difference transition-[transform] duration-75 delay-0 ease-out" style={{ transform: `translate3d(${mouseX}px, ${mouseY}px, 0)` }}></div>
         </>
     )
 }

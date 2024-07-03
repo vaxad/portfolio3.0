@@ -19,6 +19,19 @@ body {
   /* cursor: none; */
 }
 
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--secondary));
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -102,6 +115,35 @@ body {
 
 /* PROJECTS SECTION END */
 
+/* EXPERIENCE SECTION START */
+
+.marquee-animation {
+  animation-name: marquee;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.marquee-animation-parent:hover {
+  .marquee-animation {
+    animation-play-state: paused;
+  }
+}
+
+/* EXPERIENCE SECTION END */
+
+/* CONTACT SECTION START */
+
+/* .contact-marquee-animation {
+  animation-name: marquee;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+} */
+/* CONTACT SECTION END */
+
+
+
 /* KEYFRAMES */
 
 @keyframes slide-up {
@@ -125,5 +167,11 @@ body {
 @keyframes slide-left {
   to {
     transform: translateX(0);
+  }
+}
+
+@keyframes marquee {
+  100% {
+    transform: translateX(calc(-100%));
   }
 }

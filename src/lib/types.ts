@@ -36,3 +36,24 @@ export interface ProjectData {
     server: ServerProject[];
     app: AppProject[];
 }
+
+export type Achievement = {
+    _id: string,
+    title: string,
+    desc: string,
+    url: string,
+    img: string,
+    order: string,
+}
+
+export type Experience = {
+    _id: string
+    role: string
+    company: string
+    date: string
+    location: string
+    img: string
+    skills: string[]
+    url: string
+    order: string
+}

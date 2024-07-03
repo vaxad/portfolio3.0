@@ -60,16 +60,18 @@ export default function ProjectsDisplay({ data }: { data: ProjectData }) {
                         {/* : <></>} */}
                     </div>
                 </div>
-                <div className="w-full md:w-1/2 flex flex-col " onMouseLeave={() => setHoveredProj(null)}>
+                <div className="w-full md:w-1/2 flex flex-col nav-wrapper " onMouseLeave={() => setHoveredProj(null)}>
                     {data[type].slice(0, 3).map((item, idx) => {
                         const delay = idx * 0.1
                         return (
-                            <div key={`project-${item.title}`} onMouseEnter={() => setHoveredProj(idx + 1)} style={{ animationDelay: `${delay}s` }} className="project-btn | w-full group border-b flex border-black py-12 px-4 font-light hover:font-medium hover:bg-black hover:text-primary hover:px-8 transition-all flex-row  justify-between items-center">
+                            <div key={`project-${item.title}`} onMouseEnter={() => setHoveredProj(idx + 1)} style={{ animationDelay: `${delay}s` }} className="project-btn nav-link | w-full group border-b flex border-black py-12 px-4 font-light hover:font-medium hover:bg-black hover:text-primary hover:px-8 transition-all flex-row  justify-between items-center">
                                 <div className=" flex flex-col justify-center items-center w-fit">
                                     <h1 className=" text-2xl ">{item.title}</h1>
                                     <div className=" h-0.5 w-full bg-primary group-hover:scale-x-100 scale-x-0 origin-left transition-[transform] delay-100 duration-500 "></div>
                                 </div>
-                                <LuArrowUpRight className=" cursor-pointer  w-10 h-10 group-hover:scale-110 delay-300 duration-500 transition-[transform]" />
+                                <a href={item.url} target="_blank">
+                                    <LuArrowUpRight className=" cursor-pointer  w-10 h-10 group-hover:scale-110 delay-300 duration-500 transition-[transform]" />
+                                </a>
                             </div>
                         )
                     })}
