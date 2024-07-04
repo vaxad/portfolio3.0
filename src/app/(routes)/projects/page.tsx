@@ -8,8 +8,8 @@ export default async function Page() {
     return (
         <div className=" flex flex-col flex-grow ">
             <div className="flex flex-col md:flex-row py-32 px-6 md:px-12 lg:px-24 justify-center items-center gap-8 min-h-[80vh] ">
-                <h1 className=" text-8xl md:text-9xl font-medium w-full text-center underline decoration-lime-300">Projects</h1>
-                <i className=" text-2xl w-full text-center md:text-left">
+                <h1 className=" text-8xl md:text-9xl font-medium w-full text-center underline decoration-secondary fade-animation up-animation " style={{ animationDelay: "2s", animationDuration: "0.3s" }}>Projects</h1>
+                <i className=" text-2xl w-full text-center md:text-left fade-animation up-animation" style={{ animationDelay: "2.1s", animationDuration: "0.3s" }}>
                     &quot;Step into my lab and explore the creations where code meets imagination.&quot;
                 </i>
             </div>

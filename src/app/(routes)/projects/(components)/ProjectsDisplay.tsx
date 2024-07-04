@@ -71,7 +71,7 @@ export default function ProjectsDisplay({ data }: { data: ProjectData }) {
     }
     const rearrangedProjects = rearrangeArray(projects)
     return (
-        <div className=" flex flex-col gap-6 pb-24">
+        <div className=" flex flex-col gap-6 pb-24 fade-animation up-animation" style={{ animationDelay: "2.4s", animationDuration: "1s" }}>
             {rearrangedProjects.map((item, idx) => <ProjectCard item={item} key={item._id} idx={idx} total={rearrangedProjects.length} />)}
         </div>
     )

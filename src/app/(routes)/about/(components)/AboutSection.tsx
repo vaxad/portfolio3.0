@@ -27,11 +27,11 @@ export default function AboutSection() {
                 <p onMouseLeave={() => {
                     if (window.innerWidth < 700) return;
                     setHoveredKeyword("")
-                }} key={`para-${idx}`} className=" text-xl font-medium flex flex-row flex-wrap px-6 md:px-0">
+                }} key={`para-${idx}`} className=" text-xl font-medium flex flex-row flex-wrap px-6 md:px-0 fade-animation " style={{ animationDelay: "2.3s", animationDuration: "1s" }}>
                     {text.split(" ").map((it, id) => {
                         return (it === "Varad") ? (
                             <span key={`word-${id}`} className="" title="Get Resume">
-                                <a href={resumeLink} target="_blank" className="text-secondary cursor-pointer underline bg-llime-300">
+                                <a href={resumeLink} target="_blank" className="text-secondary cursor-pointer underline bg-lsecondary">
                                     {it}
                                 </a>
                                 &nbsp;
@@ -44,7 +44,7 @@ export default function AboutSection() {
                     })} <span><br /></span>
                 </p>
             ))}
-            <div className=" flex flex-grow justify-end pt-6 flex-col w-max  gap-6">
+            <div className=" flex flex-grow justify-end pt-6 flex-col w-max  gap-6 fade-animation " style={{ animationDelay: "2.7s", animationDuration: "1s" }}>
                 <div className="flex flex-nowrap marquee-animation-parent justify-end">
                     <div className="reverse-marquee-animation w-max flex flex-row-reverse justify-end flex-nowrap text-nowrap">
                         {icons.map((icon, idx) => (

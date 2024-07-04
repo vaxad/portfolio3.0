@@ -180,6 +180,11 @@ body::-webkit-scrollbar-track {
   transition: background-color 0.3s ease;
 }
 
+
+.ldr-dot:nth-child(3)::before {
+  background-color: rgba(var(--secondary));
+}
+
 .ldr-dot:nth-child(1) {
   animation: leapFrog var(--uib-speed) ease infinite;
 }
@@ -268,6 +273,26 @@ body::-webkit-scrollbar-track {
 
 /* ABOUT PAGE END */
 
+/* EXPERIENCE PAGE START */
+
+.vertical-marquee-animation {
+  animation-name: vertical-marquee;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+.reverse-vertical-marquee-animation {
+  animation-name: vertical-marquee;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+
+/* EXPERIENCE PAGE END */
+
 
 /* KEYFRAMES */
 
@@ -301,8 +326,8 @@ body::-webkit-scrollbar-track {
   }
 }
 
-@keyframes reverse-marquee {
+@keyframes vertical-marquee {
   100% {
-    transform: translateX(calc(100%));
+    transform: translateY(calc(-100%));
   }
 }

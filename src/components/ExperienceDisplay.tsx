@@ -41,7 +41,7 @@ export default function ExperienceDisplay({ data }: { data: Experience[] }) {
             <div className=" flex flex-col md:flex-row md:px-24 gap-4 w-full h-fit" >
                 <div className=" flex flex-col gap-4 w-full md:text-center">
                     <h1 className="slide-up-animation text-4xl font-medium w-full">
-                        Experiences
+                        Experience
                     </h1>
                     <i className=" text-xl">
                         &quot;My journey through the tech cosmos&quot;
