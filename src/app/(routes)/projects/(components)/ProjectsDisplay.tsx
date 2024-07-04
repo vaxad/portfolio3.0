@@ -8,9 +8,9 @@ function ProjectCard({ item, idx, total }: { item: ServerProject & { type: strin
                 <img src={item.type === "server" ? idx % 2 === 0 ? "/images/server1.png" : "/images/server2.png" : item.img[0]} alt={item.title} className=" w-full h-full group-hover:scale-125 transition-[transform] delay-0 duration-700  object-cover blur-sm opacity-50 absolute top-0 bottom-0 my-auto mx-auto" />
                 {item.type === "app" ?
                     <div className=" flex flex-row justify-between items-center w-[80%] absolute top-0 bottom-0 left-0 right-0 my-auto mx-auto">
-                        <img src={item.img[0]} className=" h-[80%]" alt="" />
-                        {item.img.length > 1 && <img src={item.img[1]} className=" h-[80%]" alt="" />}
-                        {item.img.length > 2 && <img src={item.img[2]} className=" h-[80%]" alt="" />}
+                        <img src={item.img[0]} className=" h-[80%]" alt={item.title} />
+                        {item.img.length > 1 && <img src={item.img[1]} className=" h-[80%]" alt={item.title} />}
+                        {item.img.length > 2 && <img src={item.img[2]} className=" h-[80%]" alt={item.title} />}
                     </div>
                     :
                     <img src={item.type === "server" ? idx % 2 === 1 ? "/images/server1.png" : "/images/server2.png" : item.img[0]} alt={item.title} className={`w-4/5 border  transition-[transform] delay-200 duration-500 ${item.type === "server" ? "border-transparent" : "border-white"} absolute top-0 bottom-0 left-0 right-0 my-auto mx-auto`} />

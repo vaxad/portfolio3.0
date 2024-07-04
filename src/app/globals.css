@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
   /* --foreground-rgb: 0, 0, 0;
@@ -132,15 +132,22 @@ body::-webkit-scrollbar-track {
 
 /* EXPERIENCE SECTION END */
 
+
 /* CONTACT SECTION START */
 
-/* .contact-marquee-animation {
-  animation-name: marquee;
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-} */
+.bottom-slide-up-animation {
+  animation-name: slide-up, fade-in;
+  animation-timeline: view();
+  animation-range-start: normal -10%;
+  animation-range: normal 0%;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translateY(50%);
+  opacity: 0;
+}
+
 /* CONTACT SECTION END */
+
 
 /* LOADER SECTION START */
 

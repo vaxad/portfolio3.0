@@ -3,6 +3,7 @@ import { pathAtom, showSliderAtom } from "@/state/jotai"
 import { useAtom } from "jotai"
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import Loader from "./Loader";
 // import { useEffect } from "react";
 
 export default function TransitionSlider() {
@@ -20,11 +21,7 @@ export default function TransitionSlider() {
 
     return (
         <div className={`${showSlider ? " " : " translate-x-full"} transition-[transform] delay-300 duration-700  flex fixed z-50 bg-black text-primary inset-0 justify-center items-center font-extrabold text-6xl`}>
-            <div className="ldr-container">
-                <div className="ldr-dot"></div>
-                <div className="ldr-dot"></div>
-                <div className="ldr-dot"></div>
-            </div>
+            <Loader />
         </div>
     )
 }

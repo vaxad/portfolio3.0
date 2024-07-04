@@ -3,13 +3,13 @@
 import { ProjectData } from "@/lib/types"
 import { useState } from "react"
 import { BsArrowUpRight, BsArrowRight } from "react-icons/bs"
-import Link from "next/link"
 import SliderTogglerBtn from "./SliderTogglerBtn"
 
 export default function ProjectsDisplay({ data }: { data: ProjectData }) {
     const [hoveredProj, setHoveredProj] = useState<number | null>(null)
     type dataType = "web" | "server" | "app"
     const [type, setType] = useState<dataType>("web")
+
     return (
         <>
             <div className=" flex flex-col md:flex-row gap-4 w-full h-fit">
@@ -42,7 +42,6 @@ export default function ProjectsDisplay({ data }: { data: ProjectData }) {
             <div className=" flex flex-col-reverse md:flex-row ">
                 <div className=" w-full md:w-1/2 flex flex-col justify-center items-center">
                     <div className=" w-full h-full relative flex flex-col justify-center items-center px-6">
-                        {/* {hoveredProj && data.web[hoveredProj - 1].img[0] ? */}
                         <div className={`${hoveredProj ? " opacity-0" : " opacity-100"} duration-700 flex flex-row gap-2 py-24 justify-center items-center absolute mx-auto my-auto `}>
                             <h1 className={` text-2xl font-medium hidden md:block`}>Hover over there</h1>
                             <h1 className={` text-2xl font-medium md:hidden block`}>Click over there</h1>
@@ -50,24 +49,21 @@ export default function ProjectsDisplay({ data }: { data: ProjectData }) {
                         </div>
                         <>
                             <div className=" flex absolute top-0 right-0 flex-grow w-full overflow-clip h-full blur-sm">
-
                                 {data[type].slice(0, 4).map((item, idx) => {
                                     return (
-                                        <img key={`bg-image-${idx}`} className={` ${(hoveredProj && idx === hoveredProj - 1) ? "opacity-100" : "opacity-0"} bnw bg-black transition-all duration-1000 object-cover absolute top-0 right-0 h-full w-full`} src={type === "server" ? idx % 2 === 0 ? "/images/server1.png" : "/images/server2.png" : (item.img[0] as string)} />
+                                        <img key={`bg-image-${idx}`} className={` ${(hoveredProj && idx === hoveredProj - 1) ? "opacity-100" : "opacity-0"} bnw bg-black transition-all duration-1000 object-cover absolute top-0 right-0 h-full w-full`} src={type === "server" ? idx % 2 === 0 ? "/images/server1.png" : "/images/server2.png" : (item.img[0] as string)} alt={item.title} />
                                     )
                                 })}
                             </div>
-                            {/* <img className={` object-fill blur-sm absolute top-0 right-0  h-full`} src={data.web[hoveredProj - 1].img[0] as string} /> */}
                             <div className={` ${hoveredProj ? "" : ""} delay-300 p-4 z-10 transition-all  relative overflow-clip  ${type === "app" ? "aspect-[9/16] h-full min-h-[30vh]" : " aspect-video  w-full"}`} >
                                 {data[type].slice(0, 4).map((item, idx) => {
                                     return (
-                                        <img key={`image-${idx}`} className={` ${(hoveredProj && idx === hoveredProj - 1) ? "c2 scale-100" : "c1 scale-125"} border bg-black border-white  origin-left transition-all duration-1000 absolute top-0 right-0 w-full h-full`} src={type === "server" ? idx % 2 === 1 ? "/images/server1.png" : "/images/server2.png" : (item.img[0] as string)} />
+                                        <img key={`image-${idx}`} className={` ${(hoveredProj && idx === hoveredProj - 1) ? "c2 scale-100" : "c1 scale-125"} border bg-black border-white  origin-left transition-all duration-1000 absolute top-0 right-0 w-full h-full`} src={type === "server" ? idx % 2 === 1 ? "/images/server1.png" : "/images/server2.png" : (item.img[0] as string)} alt={item.title} />
                                     )
                                 })}
 
                             </div>
                         </>
-                        {/* : <></>} */}
                     </div>
                 </div>
                 <div className="w-full md:w-1/2 flex flex-col nav-wrapper " onMouseLeave={() => setHoveredProj(null)}>

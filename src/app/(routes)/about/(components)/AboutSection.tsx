@@ -48,24 +48,24 @@ export default function AboutSection() {
                 <div className="flex flex-nowrap marquee-animation-parent justify-end">
                     <div className="reverse-marquee-animation w-max flex flex-row-reverse justify-end flex-nowrap text-nowrap">
                         {icons.map((icon, idx) => (
-                            <img key={idx} className={` ${KeyToIcon[hoveredKeyword].includes(icon) ? "" : "bnw scale-75"} px-2 transition-[filter,-webkit-filter,transform] duration-700 delay-150  `} src={`https://skillicons.dev/icons?i=${icon}&perline=1`} />
+                            <img key={idx} className={` ${KeyToIcon[hoveredKeyword].includes(icon) ? "" : "bnw scale-75"} px-2 transition-[filter,-webkit-filter,transform] duration-700 delay-150  `} src={`https://skillicons.dev/icons?i=${icon}&perline=1`} alt={icon} />
                         ))}
                     </div>
                     <div className="reverse-marquee-animation w-max flex flex-row-reverse justify-end flex-nowrap text-nowrap">
                         {icons.map((icon, idx) => (
-                            <img key={idx} className={` ${KeyToIcon[hoveredKeyword].includes(icon) ? "" : "bnw scale-75"} px-2 transition-[filter,-webkit-filter] duration-700 delay-150 `} src={`https://skillicons.dev/icons?i=${icon}&perline=1`} />
+                            <img key={idx} className={` ${KeyToIcon[hoveredKeyword].includes(icon) ? "" : "bnw scale-75"} px-2 transition-[filter,-webkit-filter] duration-700 delay-150 `} src={`https://skillicons.dev/icons?i=${icon}&perline=1`} alt={icon} />
                         ))}
                     </div>
                 </div>
                 <div className="flex flex-nowrap marquee-animation-parent">
                     <div className="marquee-animation w-max flex flex-row flex-nowrap text-nowrap">
                         {icons.map((icon, idx) => (
-                            <img key={idx} className={` ${KeyToIcon[hoveredKeyword].includes(icon) ? "" : "bnw scale-75"} px-2 transition-[filter,-webkit-filter] duration-700 delay-150 `} src={`https://skillicons.dev/icons?i=${icon}&perline=1`} />
+                            <img key={idx} className={` ${KeyToIcon[hoveredKeyword].includes(icon) ? "" : "bnw scale-75"} px-2 transition-[filter,-webkit-filter] duration-700 delay-150 `} src={`https://skillicons.dev/icons?i=${icon}&perline=1`} alt={icon} />
                         ))}
                     </div>
                     <div className="marquee-animation w-max flex flex-row flex-nowrap text-nowrap">
                         {icons.map((icon, idx) => (
-                            <img key={idx} className={` ${KeyToIcon[hoveredKeyword].includes(icon) ? "" : "bnw scale-75"} px-2 transition-[filter,-webkit-filter] duration-700 delay-150 `} src={`https://skillicons.dev/icons?i=${icon}&perline=1`} />
+                            <img key={idx} className={` ${KeyToIcon[hoveredKeyword].includes(icon) ? "" : "bnw scale-75"} px-2 transition-[filter,-webkit-filter] duration-700 delay-150 `} src={`https://skillicons.dev/icons?i=${icon}&perline=1`} alt={icon} />
                         ))}
                     </div>
                 </div>

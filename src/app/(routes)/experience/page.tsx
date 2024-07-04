@@ -1,6 +1,6 @@
-import { Experience, ProjectData } from "@/lib/types"
+import { Experience } from "@/lib/types"
 import ExperienceDisplay from "./(components)/ExperienceDisplay"
-import { getExperiences, getProjects } from "@/actions/actions"
+import { getExperiences } from "@/actions/actions"
 export default async function Page() {
     const resp: { experiences: Experience[] } | null = await getExperiences()
     const data: Experience[] | null = resp ? resp.experiences.sort((a, b) => (parseInt(b.order) - parseInt(a.order))) : null

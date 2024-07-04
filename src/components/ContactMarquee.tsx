@@ -16,7 +16,6 @@ export default function ContactMarquee() {
                         })}
                     </div>
                     <div className="marquee-animation  flex flex-row flex-nowrap text-nowrap" style={{ animationDuration: "10s" }}>
-
                         {[...(Array(5))].map((item, idx) => {
                             return (
                                 <div key={`contact-${idx}`} className=" py-4 px-6">
@@ -26,7 +25,6 @@ export default function ContactMarquee() {
                         })}
                     </div>
                     <div className="marquee-animation  flex flex-row flex-nowrap text-nowrap" style={{ animationDuration: "10s" }}>
-
                         {[...(Array(5))].map((item, idx) => {
                             return (
                                 <div key={`contact-${idx}`} className=" py-4 px-6">

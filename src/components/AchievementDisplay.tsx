@@ -3,16 +3,25 @@
 import { Achievement } from "@/lib/types"
 import { useState } from "react"
 import { BsArrowUpRight, BsArrowRight } from "react-icons/bs"
+import SliderTogglerBtn from "./SliderTogglerBtn"
 
 export default function AchievementDisplay({ data }: { data: Achievement[] }) {
     const [hoveredAchievement, setHoveredAchievement] = useState<number | null>(null)
     return (
         <>
-            <div className=" flex flex-col md:flex-row gap-4 w-full h-fit">
+            <div className=" flex flex-col md:flex-row gap-4 w-full h-fit group">
                 <div className=" flex flex-col gap-4 w-full md:text-right">
-                    <h1 className="slide-up-animation text-4xl font-medium w-full">
-                        Achievements
-                    </h1>
+                    <SliderTogglerBtn title="See More" route="/achievements">
+                        <div className=" flex flex-col gap-0.5 w-fit cursor-pointer ">
+                            <div className=" flex gap-2 items-center">
+                                <h1 className="slide-up-animation text-4xl font-medium ">
+                                    Achievements
+                                </h1>
+                                <BsArrowUpRight className=" w-6 h-6" />
+                            </div>
+                            <div className=" h-0.5 w-full bg-black scale-x-0 group-hover:scale-x-100 transition-[transform] origin-left duration-500 delay-100"></div>
+                        </div>
+                    </SliderTogglerBtn>
                     <i className=" text-xl">
                         &quot;Where my hard work paid off big time&quot;
                     </i>
@@ -32,7 +41,7 @@ export default function AchievementDisplay({ data }: { data: Achievement[] }) {
 
                                 {data.slice(0, 4).map((item, idx) => {
                                     return (
-                                        <img key={`bg-image-${idx}`} className={` ${(hoveredAchievement && idx === hoveredAchievement - 1) ? "opacity-100" : "opacity-0"} bnw bg-black transition-all duration-1000 object-cover absolute top-0 right-0 h-full w-full`} src={item.img} />
+                                        <img key={`bg-image-${idx}`} className={` ${(hoveredAchievement && idx === hoveredAchievement - 1) ? "opacity-100" : "opacity-0"} bnw bg-black transition-all duration-1000 object-cover absolute top-0 right-0 h-full w-full`} src={item.img} alt={item.title} />
                                     )
                                 })}
                             </div>
@@ -40,7 +49,7 @@ export default function AchievementDisplay({ data }: { data: Achievement[] }) {
                             <div className={`delay-300 p-4 z-10 transition-all relative overflow-clip aspect-video w-full`} >
                                 {data.slice(0, 4).map((item, idx) => {
                                     return (
-                                        <img key={`image-${idx}`} className={` ${(hoveredAchievement && idx === hoveredAchievement - 1) ? "c2 scale-100" : "c1 scale-125"} border bnw bg-black border-white  origin-left transition-all duration-1000 absolute top-0 right-0 w-full h-full`} src={item.img} />
+                                        <img key={`image-${idx}`} className={` ${(hoveredAchievement && idx === hoveredAchievement - 1) ? "c2 scale-100" : "c1 scale-125"} border bnw bg-black border-white  origin-left transition-all duration-1000 absolute top-0 right-0 w-full h-full`} src={item.img} alt={item.title} />
                                     )
                                 })}
 
