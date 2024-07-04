@@ -67,7 +67,9 @@ export default function AchievementDisplay({ data }: { data: Achievement[] }) {
                                     <h1 className=" text-2xl ">{item.title}</h1>
                                     <div className=" h-0.5 w-full bg-primary group-hover:scale-x-100 scale-x-0 origin-left transition-[transform] delay-100 duration-500 "></div>
                                 </div>
-                                <BsArrowUpRight className=" cursor-pointer  w-10 h-10 group-hover:scale-110 delay-300 duration-500 transition-[transform]" />
+                                <a href={item.url} target="_blank">
+                                    <BsArrowUpRight className=" cursor-pointer  w-10 h-10 group-hover:scale-110 delay-300 duration-500 transition-[transform]" />
+                                </a>
                             </div>
                         )
                     })}
