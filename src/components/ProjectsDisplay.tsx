@@ -14,10 +14,10 @@ export default function ProjectsDisplay({ data }: { data: ProjectData }) {
         <>
             <div className=" flex flex-col md:flex-row gap-4 w-full h-fit">
                 <div className=" flex flex-col gap-4 w-full group">
-                    <SliderTogglerBtn title="See More" route="/projects">
+                    <SliderTogglerBtn title="See More" route="/projects" className="slide-up-animation">
                         <div className=" flex flex-col gap-0.5 w-fit cursor-pointer ">
                             <div className=" flex gap-2 items-center">
-                                <h1 className="slide-up-animation text-4xl font-medium ">
+                                <h1 className=" text-4xl font-medium ">
                                     Projects
                                 </h1>
                                 <BsArrowUpRight className=" w-6 h-6" />

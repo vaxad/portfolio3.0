@@ -9,24 +9,7 @@ export default function AchievementDisplay({ data }: { data: Achievement[] }) {
     const [hoveredAchievement, setHoveredAchievement] = useState<number | null>(null)
     return (
         <>
-            <div className=" flex flex-col md:flex-row gap-4 w-full h-fit group">
-                <div className=" flex flex-col gap-4 w-full md:text-right">
-                    <SliderTogglerBtn title="See More" route="/achievements">
-                        <div className=" flex flex-col gap-0.5 w-fit cursor-pointer ">
-                            <div className=" flex gap-2 items-center">
-                                <h1 className="slide-up-animation text-4xl font-medium ">
-                                    Achievements
-                                </h1>
-                                <BsArrowUpRight className=" w-6 h-6" />
-                            </div>
-                            <div className=" h-0.5 w-full bg-black scale-x-0 group-hover:scale-x-100 transition-[transform] origin-left duration-500 delay-100"></div>
-                        </div>
-                    </SliderTogglerBtn>
-                    <i className=" text-xl">
-                        &quot;Where my hard work paid off big time&quot;
-                    </i>
-                </div>
-            </div>
+
             <div className=" flex flex-col-reverse md:flex-row-reverse ">
                 <div className=" w-full md:w-1/2 flex flex-col justify-center items-center">
                     <div className=" w-full h-full relative flex flex-col justify-center items-center px-6">

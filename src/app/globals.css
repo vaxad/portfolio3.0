@@ -130,6 +130,146 @@ body::-webkit-scrollbar-track {
   }
 }
 
+
+.curved-card {
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.curved-section:hover {
+  .curved-card-container {
+    animation-play-state: paused;
+  }
+}
+
+.curved-card-container {
+  display: flex;
+  position: relative;
+  translate: 0 0 1000px;
+  animation: rotate-experience 20s linear infinite;
+}
+
+.curved-section {
+  display: grid;
+  align-items: center;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.curved-section * {
+  transform-style: preserve-3d;
+}
+
+/* 
+.curved-card-container>div:nth-child(1) {
+  transform: rotateY(calc(1 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(2) {
+  transform: rotateY(calc(2 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(3) {
+  transform: rotateY(calc(3 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(4) {
+  transform: rotateY(calc(4 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(5) {
+  transform: rotateY(calc(5 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(6) {
+  transform: rotateY(calc(6 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(7) {
+  transform: rotateY(calc(7 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(8) {
+  transform: rotateY(calc(8 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(9) {
+  transform: rotateY(calc(9 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(10) {
+  transform: rotateY(calc(10 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(11) {
+  transform: rotateY(calc(11 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(12) {
+  transform: rotateY(calc(12 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(13) {
+  transform: rotateY(calc(13 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(14) {
+  transform: rotateY(calc(14 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(15) {
+  transform: rotateY(calc(15 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(16) {
+  transform: rotateY(calc(16 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(17) {
+  transform: rotateY(calc(17 * 20deg)) translateZ(-1200px);
+}
+
+.curved-card-container>div:nth-child(18) {
+  transform: rotateY(calc(18 * 20deg)) translateZ(-1200px);
+} */
+
+@keyframes rotate-experience {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+
+/* .curved-card {
+  transform: rotateY(30deg);
+  animation: curved-rotate 10s infinite;
+} */
+/* .curved-card:hover {
+  transform: rotateY(0deg) translateZ(-200px);
+}
+.curved-card-container>curved-card-container:nth-child(2) {
+  animation-delay: -1..25s;
+} > div
+.curved-card-container>curved-card-container:nth-child(3) {
+  animation-delay: -2..5s;
+} > div
+.curved-card-container>curved-card-container:nth-child(4) {
+  animation-delay: -5s.;
+}
+.curved > div-card-container>curved-card-container:nth-child(5) {
+  animation-delay: -6..25s;
+} > div
+.curved-card-container>curved-card-container:nth-child(6) {
+  animation-delay: -7..5s;
+} > div */
+
+
+
 /* EXPERIENCE SECTION END */
 
 
@@ -336,5 +476,15 @@ body::-webkit-scrollbar-track {
 @keyframes vertical-marquee {
   100% {
     transform: translateY(calc(-100%));
+  }
+}
+
+@keyframes curved-rotate {
+  from {
+    transform: rotateY(-30deg);
+  }
+
+  to {
+    transform: rotateY(30deg);
   }
 }
